@@ -1,43 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Eyad]'s Website</title>
+    <title>Eyad's Portfolio</title>
     <style>
-      body { 
-        font-family: Arial, sans-serif; 
-        max-width: 800px;
-        margin: 0 auto; 
-        padding: 20px; 
-        background: #121212; 
-        color: #e0e0e0;
-      }
-      h1   { color: #6ba4ff; }
-      h2   { color: #4fa8ff; border-bottom: 2px solid #4fa8ff; }
-      p    { line-height: 1.6; }
-      a    { color: #ff9e80; text-decoration: none; }
-      a:hover { text-decoration: underline; }
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --accent-blue: #38bdf8;
+            --accent-green: #4ade80;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        section {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #334155;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        p {
+            color: var(--text-main);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #334155;
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .btn:hover {
+            background-color: #475569;
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .btn-arrow {
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
     </style>
-  </head>
-  <body>
-    <h1>Hi, I'm Eyad!</h1>
-    
-    <h2>About Me</h2>
-    <p>Im tall, love playing soccer and having fun with family and friends.  Im 6 feet tall and love staying active, especially by playing soccer and working out.</p>
-  
-    <h2>My Interests</h2>
-    <p>I love visiting Egypt and going to the beach. I also love adventure, and one of the coolest things Ive done is ride mopeds around Egypt</p>
- 
-    <h2>My Goals for This Course</h2>
-    <p>I want to build a website people will love and I want to learn from my mistake. I also want to make something that would make myself proud.</p>
- 
-    <h2>My GitHub</h2>
-    <p>Check out my projects:</p>
-<ul>
-  <li><a href="https://github.com">GitHub Profile</a></li>
-  <li><a href="https://studio.code.org/projects/applab/4619e077-6556-497e-b3e2-31e40f06e6e4">App Lab Project</a></li>
-  <li><a href="https://cad.onshape.com/documents/594fe95a2143b7c205c4bacc/w/24ea7d6bd504befff78791f6/e/cf4b5ebba93a191d15f88160?renderMode=0&uiState=6a2c21cd785abff32cff2091">Onshape CAD Design</a></li>
-</ul>
-  </body>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Hi, I'm Eyad!</h1>
+            <p class="subtitle">Welcome to my personal portfolio</p>
+        </header>
+
+        <section>
+            <h2>⚽ About Me</h2>
+            <p>I am a <span class="highlight">6-foot-tall</span> athlete who loves staying active, playing soccer, and working out.</p>
+            <p>Most importantly, I enjoy having fun and spending quality time with my family and friends.</p>
+        </section>
+
+        <section>
+            <h2>🌍 My Interests</h2>
+            <p>I have a passion for travel and adventure. My favorite destinations involve visiting Egypt and relaxing at the beach.</p>
+            <p>One of the coolest adrenaline rushes I've ever experienced was <span class="highlight">riding mopeds around Egypt</span>.</p>
+        </section>
+
+        <section>
+            <h2>🎯 Course Goals</h2>
+            <p>My ultimate goal is to build a website that people will truly love using.</p>
+            <p>I want to learn from my mistakes along the way and create code that makes me proud.</p>
+        </section>
+
+        <section>
+            <h2>💻 My Work & GitHub</h2>
+            <p>Explore my code repositories, application layouts, and 3D modeling work below:</p>
+            
+            <div class="links-container">
+                <a href="#" class="btn" target="_blank">
+                    <span>GitHub Profile</span>
+                    <span class="btn-arrow">&rarr;</span>
+                </a>
+                <a href="#" class="btn" target="_blank">
+                    <span>App Lab Project</span>
+                    <span class="btn-arrow">&rarr;</span>
+                </a>
+                <a href="#" class="btn" target="_blank">
+                    <span>Onshape CAD Design</span>
+                    <span class="btn-arrow">&rarr;</span>
+                </a>
+            </div>
+        </section>
+    </div>
+
+</body>
 </html>
+
